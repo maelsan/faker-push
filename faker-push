@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# MADE BY MAEL A.
+# Repositorie: https://github.com/maelsan/faker-push
+
 ###
  # NOTE: Put your informations here (path + folder name)
  #     : If the folder is already created (or repo already cloned), nothing will be changed.
@@ -8,7 +11,6 @@ DIRGIT="$HOME/repos/"; # Path of your fake repo
 DIRNAME="faker-push/"; # Name of your repo
 BRANCH="master" # Branch name
 MESSAGE="https://github.com/maelsan/faker-push"
-
 
 HOWMANY=$((RANDOM%50+1)) # Quantity of fake commit, you can change this value
 
@@ -21,7 +23,7 @@ FakerGo () {
 				git commit -m "$MESSAGE" >/dev/null
 				git push origin "$BRANCH" --quiet;
 			done
-			sleep 23h # We're waiting one day
+			sleep 6h # We're waiting one day
 			FakerGo
 		fi
 	else
