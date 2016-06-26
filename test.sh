@@ -12,6 +12,7 @@ MESSAGE="https://github.com/maelsan/faker-push"
 FakerGo () {
 	if [ -d "$DIRGIT$DIRNAME" ]; then
 		if [ -d "$DIRGIT$DIRNAME".git ]; then
+			quiet_git
 			uuidgen > "$DIRGIT$DIRNAME".faker
 			git add -f .faker >/dev/null
 			git commit -m "$MESSAGE" >/dev/null
@@ -30,6 +31,19 @@ noFolder () {
 	cd "$DIRGIT" || exit
 	mkdir faker 
 	FakerGo
+}
+
+quiet_git() {
+    stdout=$(".lock")
+    stderr=$(".lock")
+
+    if ! git "$@" </dev/null >$stdout 2>$stderr; then
+        cat $stderr >&2
+        rm -f $stdout $stderr
+        exit 1
+    fi
+
+    rm -f $stdout $stderr
 }
 
 FakerGo # - Run script
