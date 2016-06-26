@@ -12,10 +12,10 @@ MESSAGE="https://github.com/maelsan/faker-push"
 FakerGo () {
 	if [ -d "$DIRGIT$DIRNAME" ]; then
 		if [ -d "$DIRGIT$DIRNAME".git ]; then
-			echo "q" > "$DIRGIT$DIRNAME".faker
-			git add -f *
-			git commit -m "$MESSAGE"
-			git push origin "$BRANCH"
+			uuidgen > "$DIRGIT$DIRNAME".faker
+			git add -f .faker >/dev/null
+			git commit -m "$MESSAGE" >/dev/null
+			git push origin "$BRANCH" >/dev/null
 			FakerGo
 		fi
 	else
