@@ -7,8 +7,7 @@
 ## WHAT DOES THIS SCRIPT?
 He sends fake contributions on your Github account. Why would we cheat with this? Because green is beautiful.
 
-[![Demo](https://img.shields.io/badge/MacOS-tested-brightgreen.svg)]
-
+<img src="https://raw.githubusercontent.com/maelsan/faker-push/master/medias/green.png?token=AGyZ7Ob2A7OTZS1TMZLvCGZdxNS1TM4Cks5XeXVYwA%3D%3D" alt="green" width="700">
 
 ## ENVIRONMENT
 As a shell script, he will work on UNIX, LINUX and MacOS (OSX).
@@ -39,7 +38,7 @@ Clone this repository and move him to ***a suitable place*** (because you will n
 
 Now, to automatize this shellscript (for daily push, without manual launch each time), you have to use a specific method according to your OS. Follow these instructions.
 
-### MacOS (OSX)
+### MacOS (OSX) <img src="https://raw.githubusercontent.com/maelsan/faker-push/master/medias/apple.png?token=AGyZ7NJIk_fRWFwQE5LFoJB4xFYzWf9lks5XeXY8wA%3D%3D" alt="apple" width="20">
 
 You cannot use a simple cron because Apple consider this method deprecated. So you have to use [**launchd**](http://launchd.info).
 
@@ -51,7 +50,7 @@ $ ./launchd-osx
 
 This script creates a entry in the deamon system and at each login (or boot), **faker-push** will be launched automatically in background without any action on your part. Launchd script defines interval between two executions of faker-push. If you need to push more, or less, you can edit the generated file at `~/Library/LaunchDaemons/com.fakerpush.app.plist` (by default, the **push interval is set to 6 hours**).
 
-### UNIX (LINUX)
+### UNIX (LINUX) <img src="https://raw.githubusercontent.com/maelsan/faker-push/master/medias/linux.png?token=AGyZ7O1b9RXyJNkcFVvZ6e1rI8lqHrx6ks5XeXZ1wA%3D%3D" alt="linux" width="20">
 
 It's easier on UNIX/LINUX platforms to automatize this shellscript. You can use cron or put these lines:
 
@@ -73,5 +72,5 @@ or you can follow these instructions for use the initscript:
 
 As you are a UNIX/LINUX user, I let you choose the best solution for you. 
 
-## Licence
+## Licence <img src="https://raw.githubusercontent.com/maelsan/faker-push/master/medias/mit.png?token=AGyZ7CTwGwpYqemyz1xKR_0Uaf_Pwo7eks5XeXbFwA%3D%3D" alt="linux" width="20">
 The MIT License (MIT). Please see License File for more information.
