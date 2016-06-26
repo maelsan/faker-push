@@ -23,8 +23,6 @@ FakerGo () {
 				git commit -m "$MESSAGE" >/dev/null
 				git push origin "$BRANCH" --quiet;
 			done
-			sleep 6h # We're waiting one day
-			FakerGo
 		fi
 	else
 		noFolder
