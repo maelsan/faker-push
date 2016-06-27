@@ -2,7 +2,7 @@
 [![Software License](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
 [![OS](https://img.shields.io/badge/MacOS-tested-brightgreen.svg)](https://github.com/apple)
 [![OS](https://img.shields.io/badge/Linux-tested-brightgreen.svg)](https://github.com/torvalds/linux)
-[![Version](https://img.shields.io/badge/version-1.0.0-yellow.svg)](https://github.com/maelsan/faker-push)
+[![Version](https://img.shields.io/badge/version-0.0.1-yellow.svg)](https://github.com/maelsan/faker-push)
 
 ## WHAT DOES THIS SCRIPT?
 He sends fake contributions on your Github account. Why would we cheat with this? Because green is beautiful.
