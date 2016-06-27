@@ -48,7 +48,7 @@ I made a script for you, so just run `launchd-osx` in your terminal:
 $ ./launchd-osx
 ```
 
-This script creates a entry in the deamon system and at each login (or boot), **faker-push** will be launched automatically in background without any action on your part. Launchd script defines interval between two executions of faker-push. If you need to push more, or less, you can edit the generated file at `~/Library/LaunchDaemons/com.fakerpush.app.plist` (by default, the **push interval is set to 6 hours**).
+This script creates a entry in the deamon system and at each login (or boot), **faker-push** will be launched automatically in background without any action on your part. Launchd script defines interval between two executions of faker-push. If you need to push more, or less, you can edit the generated file at `~/Library/LaunchDaemons/com.fakerpush.plist` (by default, the **push interval is set to 6 hours**).
 
 ### UNIX (LINUX) <img src="https://raw.githubusercontent.com/maelsan/faker-push/master/medias/linux.png?token=AGyZ7O1b9RXyJNkcFVvZ6e1rI8lqHrx6ks5XeXZ1wA%3D%3D" alt="linux" width="20">
 

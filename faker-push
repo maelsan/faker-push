@@ -7,7 +7,7 @@
  # NOTE: Put your informations here (path + folder name)
  #     : If the folder is already created (or repo already cloned), nothing will be changed.
 ###
-DIRGIT="$HOME/repos/"; # Path of your fake repo
+DIRGIT="$HOME/Repos/"; # Path of your fake repo
 DIRNAME="faker-push/"; # Name of your repo
 BRANCH="master" # Branch name
 MESSAGE="https://github.com/maelsan/faker-push"
@@ -17,11 +17,15 @@ HOWMANY=$((RANDOM%50+1)) # Quantity of fake commit, you can change this value
 FakerGo () {
 	if [ -d "$DIRGIT$DIRNAME" ]; then
 		if [ -d "$DIRGIT$DIRNAME".git ]; then
-			for (( i = 0; i <= HOWMANY; i++ )); do
-				uuidgen > "$DIRGIT$DIRNAME".faker
-				git add -f .faker >/dev/null
-				git commit -m "$MESSAGE" >/dev/null
-				git push origin "$BRANCH" --quiet;
+			uuidgen > "$DIRGIT$DIRNAME".faker
+			git add -f .faker >/dev/null
+			git commit -m "$MESSAGE" >/dev/null
+			git push origin "$BRANCH" --quiet;
+
+			HOWMANY=$((HOWMANY-1))
+
+			while [ "$HOWMANY" -gt 0 ]; do
+				FakerGo
 			done
 		fi
 	else
