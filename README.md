@@ -25,14 +25,6 @@ BRANCH="master"
 
 Don't forget the last slash `/`. `BRANCH` is set to `master` by default, so you don't have to change her unless you need.
 
-Also, you can define how many push to do, at this line:
-
-```
-HOWMANY=$((RANDOM%50+1))
-```
-
-By default, I use `RANDOM` with a little operation for restrict to a regular push. If you don't understand, just don't touch.
-
 ## INSTALL
 First of all, during the installation process, don't use `sudo`, `su`, or anything else. faker-push need to acces to your user, and if you use a root user, he will not be able to work.
 
@@ -80,7 +72,7 @@ As you are a UNIX/LINUX user, I let you choose the best solution for you.
 - On OSX, you ran `launchd-osx` with sudo mode (and you must not).
 - CHMOD or ownership on faker-push are incorrects.
 
-NOTE: faker-push and launchd must be launched without sudo, otherwise, permission problems could be happen...
+NOTE: faker-push and launchd must be launched without sudo, otherwise, permission problems could happen...
 
 ## Licence <img src="https://raw.githubusercontent.com/maelsan/faker-push/master/medias/mit.png?token=AGyZ7CTwGwpYqemyz1xKR_0Uaf_Pwo7eks5XeXbFwA%3D%3D" alt="linux" width="20">
 The MIT License (MIT). Please see License File for more information.
