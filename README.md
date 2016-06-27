@@ -34,15 +34,13 @@ Now, to automatize this shellscript (for daily push, without manual launch each 
 
 ### MacOS (OSX) <img src="https://raw.githubusercontent.com/maelsan/faker-push/master/medias/apple.png?token=AGyZ7NJIk_fRWFwQE5LFoJB4xFYzWf9lks5XeXY8wA%3D%3D" alt="apple" width="20">
 
-You cannot use a simple cron because Apple consider this method deprecated. So you have to use [**launchd**](http://launchd.info).
-
 I made a script for you, so just run `launchd-osx` in your terminal:
 
 ```
 $ ./launchd-osx
 ```
 
-This script creates a entry in the agents system and at each login (or boot), **faker-push** will be launched automatically in background without any action on your part. Launchd script defines interval between two executions of faker-push. If you need to push more, or less, you can edit the generated file at `~/Library/LaunchAgents/com.fakerpush.plist` (by default, the **push interval is set to 6 hours**).
+This script use [**launchd**](http://launchd.info) and at each login (or boot), faker-push will be launched automatically in background without any action on your part. Launchd script defines interval between two executions of faker-push. If you need to push more, or less, you can edit the generated file at `~/Library/LaunchAgents/com.fakerpush.plist` (by default, the **push interval is set to 6 hours**).
 
 ### UNIX (LINUX) <img src="https://raw.githubusercontent.com/maelsan/faker-push/master/medias/linux.png?token=AGyZ7O1b9RXyJNkcFVvZ6e1rI8lqHrx6ks5XeXZ1wA%3D%3D" alt="linux" width="20">
 
