@@ -16,7 +16,7 @@ As a shell script, he will work on UNIX, LINUX and MacOS (OSX).
 **You have to set some vars to define your repo's path.**
 
 ```
-DIRGIT="$HOME/repos/"; 
+DIRGIT="$HOME/Repos/"; 
 DIRNAME="faker-push/"; 
 BRANCH="master" 
 ```
@@ -34,6 +34,8 @@ HOWMANY=$((RANDOM%50+1))
 By default, I use `RANDOM` with a little operation for restrict to a regular push. If you don't understand, just don't touch.
 
 ## INSTALL
+First of all, during the installation process, don't use `sudo`, `su`, or anything else. faker-push need to acces to your user, and if you use a root user, he will not be able to work.
+
 Clone this repository and move him to ***a suitable place*** (because you will not able to move him after, not without change configuration).
 
 Now, to automatize this shellscript (for daily push, without manual launch each time), you have to use a specific method according to your OS. Follow these instructions.
@@ -48,14 +50,14 @@ I made a script for you, so just run `launchd-osx` in your terminal:
 $ ./launchd-osx
 ```
 
-This script creates a entry in the deamon system and at each login (or boot), **faker-push** will be launched automatically in background without any action on your part. Launchd script defines interval between two executions of faker-push. If you need to push more, or less, you can edit the generated file at `~/Library/LaunchAgents/com.fakerpush.plist` (by default, the **push interval is set to 6 hours**).
+This script creates a entry in the agents system and at each login (or boot), **faker-push** will be launched automatically in background without any action on your part. Launchd script defines interval between two executions of faker-push. If you need to push more, or less, you can edit the generated file at `~/Library/LaunchAgents/com.fakerpush.plist` (by default, the **push interval is set to 6 hours**).
 
 ### UNIX (LINUX) <img src="https://raw.githubusercontent.com/maelsan/faker-push/master/medias/linux.png?token=AGyZ7O1b9RXyJNkcFVvZ6e1rI8lqHrx6ks5XeXZ1wA%3D%3D" alt="linux" width="20">
 
 It's easier on UNIX/LINUX platforms to automatize this shellscript. You can use cron or put these lines:
 
 ```
-FAKER="your/complete/path/faker-push.sh"
+FAKER="your/complete/path/faker-push"
 nohup "$FAKER" &
 ```
 
@@ -71,6 +73,14 @@ or you can follow these instructions for use the initscript:
 * [http://askubuntu.com/questions/228304/how-do-i-run-a-script-at-start-up](http://askubuntu.com/questions/228304/how-do-i-run-a-script-at-start-up)
 
 As you are a UNIX/LINUX user, I let you choose the best solution for you. 
+
+## IT DOESN'T WORK ! :rage3:
+
+- You have made a mistake on your path repo.
+- On OSX, you ran `launchd-osx` with sudo mode (and you must not).
+- CHMOD or ownership on faker-push are incorrects.
+
+NOTE: faker-push and launchd must be launched without sudo, otherwise, permission problems could be happen...
 
 ## Licence <img src="https://raw.githubusercontent.com/maelsan/faker-push/master/medias/mit.png?token=AGyZ7CTwGwpYqemyz1xKR_0Uaf_Pwo7eks5XeXbFwA%3D%3D" alt="linux" width="20">
 The MIT License (MIT). Please see License File for more information.
