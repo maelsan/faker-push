@@ -70,7 +70,9 @@ As you are a UNIX/LINUX user, I let you choose the best solution for you.
 - On OSX, you ran `launchd-osx` with sudo mode (and you must not).
 - CHMOD or ownership on faker-push are incorrects.
 
-NOTE: faker-push and launchd must be launched without sudo, otherwise, permission problems could happen... If you have a problem with faker-push, feel free to contact me or create a new issue on Github.
+NOTE: faker-push and launchd must be launched without sudo, otherwise, permission problems could happen... 
+
+If you have a problem with faker-push, feel free to contact me or create a new issue on Github.
 
 ## Licence <img src="https://raw.githubusercontent.com/maelsan/faker-push/master/medias/mit.png?token=AGyZ7CTwGwpYqemyz1xKR_0Uaf_Pwo7eks5XeXbFwA%3D%3D" alt="linux" width="20">
 The MIT License (MIT). Please see License File for more information.
