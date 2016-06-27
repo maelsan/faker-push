@@ -1,0 +1,1 @@
+on doit juste ecrire un fichier dans library/deamonmachin avec le bon chemin (on prends le path courant en chekant si faker-push est dispo sur la meme racine ou celle du dessus, pis on colle le path et on ecrit le fichier avec du sudo) ensuite on load le service.
