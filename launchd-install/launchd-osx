@@ -8,7 +8,7 @@ NAMEAGENT="com.fakerpush.plist"
 NAMESH="faker-push"
 
 if [ "$EUID" -eq 0 ]; then 
-	echo "ERROR: launchd-osx needs to be launched without sudo!"
+	echo "\033[31m[X]\033[m launchd-osx needs to be launched without sudo!"
   exit
 fi
 
