@@ -40,7 +40,7 @@ I made a script for you, so just run `launchd-osx` in your terminal:
 $ ./launchd-osx
 ```
 
-<img src="https://raw.githubusercontent.com/maelsan/faker-push/master/medias/linux.png?token=AGyZ7O1b9RXyJNkcFVvZ6e1rI8lqHrx6ks5XeXZ1wA%3D%3D" alt="linux" width="600">
+<img src="https://raw.githubusercontent.com/maelsan/faker-push/master/medias/install.png?token=AGyZ7Bvi3_uwow0gv1AVsaNILKkTF0hAks5Xe45TwA%3D%3D" alt="installation" width="600">
 
 This script use [**launchd**](http://launchd.info) and at each login (or boot), faker-push will be launched automatically in background without any action on your part. Launchd script defines interval between two executions of faker-push. If you need to push more, or less, you can edit the generated file at `~/Library/LaunchAgents/com.fakerpush.plist` (by default, the **push interval is set to 6 hours**).
 

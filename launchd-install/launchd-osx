@@ -61,7 +61,6 @@ fakerPush () {
 	echo "\033[1;32m[V]\033[m faker-push successfully installed and launched."
 }
 
-
 if [ -e "$AGENTSPATH$NAMEAGENT" ]; then
 	read -p "faker-push is already installed. Would you reinstall him?" yn
     case $yn in
