@@ -59,7 +59,7 @@ nohup "$FAKER" &
 * `/etc/profile.d`
 * `/home/$USER/.profile`
 
-or you can follow these instructions for use the initscript:
+or you can follow these instructions to use the initscript:
 
 * [http://stackoverflow.com/questions/12973777/how-to-run-a-shell-script-at-startup](http://stackoverflow.com/questions/12973777/how-to-run-a-shell-script-at-startup)
 * [http://askubuntu.com/questions/228304/how-do-i-run-a-script-at-start-up](http://askubuntu.com/questions/228304/how-do-i-run-a-script-at-start-up)
