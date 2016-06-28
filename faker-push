@@ -17,7 +17,7 @@ HOWMANY=$((RANDOM%50+1)) # Quantity of fake commit, you can change this value
 FakerGo () {
 	if [ -d "$DIRGIT$DIRNAME" ]; then
 		if [ -d "$DIRGIT$DIRNAME".git ]; then
-			cd ""$DIRGIT$DIRNAME""
+			cd "$DIRGIT$DIRNAME"
 
 			uuidgen > "$DIRGIT$DIRNAME".faker
 			git add -f .faker >/dev/null

@@ -13,9 +13,15 @@ if [ "$EUID" -eq 0 ]; then
 fi
 
 fakerPush () {
+	echo "\033[33m[>]\033[m Unloading agent (if turned on).."
+	launchctl unload "$AGENTSPATH$NAMEAGENT" >/dev/null
+	echo "\033[33m[>]\033[m Deleting agent file (if exists).."
+	rm "$AGENTSPATH$NAMEAGENT" >/dev/null
+
 	cd ..
 	REPOSU="$(pwd)"
 
+	echo "\033[33m[>]\033[m Writing agent file.."
 	cat > "$AGENTSPATH$NAMEAGENT" <<- EOF1
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -52,7 +58,9 @@ fakerPush () {
 
 	cd "$AGENTSPATH"
 	launchctl load "$NAMEAGENT"
+	echo "\033[1;32m[V]\033[m faker-push successfully installed and launched."
 }
+
 
 if [ -e "$AGENTSPATH$NAMEAGENT" ]; then
 	read -p "faker-push is already installed. Would you reinstall him?" yn
@@ -61,4 +69,6 @@ if [ -e "$AGENTSPATH$NAMEAGENT" ]; then
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
+else
+	fakerPush
 fi
