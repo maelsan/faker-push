@@ -1,1 +1,64 @@
-on doit juste ecrire un fichier dans library/deamonmachin avec le bon chemin (on prends le path courant en chekant si faker-push est dispo sur la meme racine ou celle du dessus, pis on colle le path et on ecrit le fichier avec du sudo) ensuite on load le service.
+#!/bin/sh
+
+# MADE BY MAEL A.
+# Repositorie: https://github.com/maelsan/faker-push
+
+AGENTSPATH="/Users/$USER/Library/LaunchAgents/"
+NAMEAGENT="com.fakerpush.plist"
+NAMESH="faker-push"
+
+if [ "$EUID" -eq 0 ]; then 
+	echo "ERROR: launchd-osx needs to be launched without sudo!"
+  exit
+fi
+
+fakerPush () {
+	cd ..
+	REPOSU="$(pwd)"
+
+	cat > "$AGENTSPATH$NAMEAGENT" <<- EOF1
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Label</key>
+		<string>com.fakerpush.cron</string>
+
+		<key>ProgramArguments</key>
+		<array>
+			<string>/bin/sh</string>
+			<string>$REPOSU/$NAMESH</string>
+		</array>
+
+		<key>RunAtLoad</key>
+		<true/>
+
+		<key>ThrottleInterval</key>
+		<integer>21600</integer>
+
+		<!-- DEBUG ONLY
+			<key>StandardInPath</key>
+			<string>/tmp/test.stdin</string>
+
+			<key>StandardOutPath</key>
+			<string>/tmp/test.stdout</string>
+		
+			<key>StandardErrorPath</key>
+			<string>/tmp/test.stderr</string>
+	    -->
+	</dict>
+</plist>
+	EOF1
+
+	cd "$AGENTSPATH"
+	launchctl load "$NAMEAGENT"
+}
+
+if [ -e "$AGENTSPATH$NAMEAGENT" ]; then
+	read -p "faker-push is already installed. Would you reinstall him?" yn
+    case $yn in
+        [Yy]* ) fakerPush;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+fi
