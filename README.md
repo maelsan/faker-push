@@ -28,9 +28,7 @@ Don't forget the last slash `/`. `BRANCH` is set to `master` by default, so you 
 ## INSTALL
 First of all, during the installation process, don't use `sudo`, `su`, or anything else. faker-push need to acces to your user, and if you use a root user, he will not be able to work.
 
-Also, you have to fork this repo (to be able to push).
-
-Clone the forked repository and move him to ***a suitable place*** (because you will not able to move him after, not without change configuration).
+Clone this repository and move him to ***a suitable place*** (because you will not able to move him after, not without change configuration).
 
 Now, to automatize this shellscript (for daily push, without manual launch each time), you have to use a specific method according to your OS. Follow these instructions.
 
