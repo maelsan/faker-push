@@ -15,7 +15,7 @@ As a shell script, he will work on UNIX, LINUX and MacOS (OSX).
 ## CUSTOMIZE
 **You have to set some vars to define your repo's path.**
 
-```
+```shell
 DIRGIT="$HOME/Repos/"; 
 DIRNAME="faker-push/"; 
 BRANCH="master" 
@@ -36,7 +36,7 @@ Now, to automatize this shellscript (for daily push, without manual launch each 
 
 I made a script for you, so just run `launchd-osx` in your terminal:
 
-```
+```shell
 $ ./launchd-osx
 ```
 
@@ -48,7 +48,7 @@ This script use [**launchd**](http://launchd.info) and at each login (or boot), 
 
 It's easier on UNIX/LINUX platforms to automatize this shellscript. You can use cron or put these lines:
 
-```
+```shell
 FAKER="your/complete/path/faker-push"
 nohup "$FAKER" &
 ```
