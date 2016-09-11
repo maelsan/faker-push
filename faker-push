@@ -19,6 +19,8 @@ FakerGo () {
 		if [ -d "$DIRGIT$DIRNAME".git ]; then
 			cd "$DIRGIT$DIRNAME"
 
+			git fetch --all --quiet
+			git reset --hard origin/master --quiet
 			uuidgen > "$DIRGIT$DIRNAME".faker
 			git add -f .faker >/dev/null
 			git commit -m "$MESSAGE" >/dev/null
